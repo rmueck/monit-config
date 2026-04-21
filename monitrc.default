@@ -115,7 +115,7 @@ set statefile /var/lib/monit/state
     # with hostgroups [ "Virtual machines", Web ] # Member of M/Monit hostgroup
 #
 #
-set mmonit https://monit:MON_monit@babastation.ddns.net:8443/collector
+set mmonit https://monit:MON_password@mymmonit.ddns.net:8443/collector
      and register without credentials     # Don't register credentials
 
 ## Monit by default uses the following format for alerts if the mail-format
@@ -166,8 +166,8 @@ set httpd port 2812 and
    #use address localhost  # only accept connection from localhost (drop if you use M/Monit)
     allow localhost        # allow localhost to connect to the server and
     # allow admin:monit      # require user 'admin' with password 'monit'
-    allow madmin:MONbabamonit
-    allow babastation.ddns.net
+    allow madmin:MONPASSWORD
+    allow mymmonit.ddns.net
 #    #with ssl {            # enable SSL/TLS and set path to server certificate
 #    #    pemfile: /etc/ssl/certs/monit.pem
 #    #}
