@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Check the app container
-/usr/bin/docker top "joplin-server" >/dev/null 2>&1
-RC_HD=$?
+/usr/bin/docker top "vaultwarden" >/dev/null 2>&1
+RC_APP=$?
 
-# Check the db container
-/usr/bin/docker top "joplin-db" >/dev/null 2>&1
-RC_DB=$?
+# Check the fail2ban container
+/usr/bin/docker top "fail2ban" >/dev/null 2>&1
+RC_F2B=$?
 
 # Use the correct variable names for the sum
-SUM_RC=$((RC_HD + RC_DB))
+SUM_RC=$((RC_APP + RC_F2B))
 
 echo "Combined Exit Status: $SUM_RC"
 

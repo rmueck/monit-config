@@ -1,0 +1,6 @@
+CHECK PROGRAM vaultwarden WITH PATH /etc/monit/scripts/check_container_vaultwarden.sh
+  START PROGRAM = "/etc/monit/scripts/start_vaultwarden.sh"
+  STOP PROGRAM = "/etc/monit/scripts/stop_vaultwarden.sh"
+  IF status != 0 FOR 1 CYCLES THEN RESTART
+  IF status != 0 FOR 2 CYCLES THEN alert
+#  IF 2 RESTARTS WITHIN 3 CYCLES THEN UNMONITOR
