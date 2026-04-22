@@ -2,6 +2,7 @@
 
 # Check the app container
 /usr/bin/docker top "caddy" >/dev/null 2>&1
+# /usr/bin/docker inspect --format='{{.State.Running}}' caddy 2>/dev/null | grep -q "true"
 RC_APP=$?
 
 
